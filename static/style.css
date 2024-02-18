@@ -1,0 +1,308 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mukta', sans-serif;
+    background-color: #E5E0FF;
+}
+
+.head-container{
+    display: flex;
+    justify-content: center;
+}
+
+.main-header {
+    position: fixed;
+    z-index: 100;
+    background-color:#E5E0FF;
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    padding: 0.3rem;
+    font-size: 1.5rem;
+}
+
+.logo>img {
+    height: 4.1rem;
+}
+
+.unselectable {
+    user-select: none;
+    margin: 5px 20px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-right: 20px;
+}
+
+.main-nav .nav-item {
+    font-weight: bold;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #4b68dbff;
+    transition: color 0.3s;
+}
+.main-nav a:hover {
+    color: rgb(137, 114, 254);
+}
+.user-info {
+    display: flex;
+    align-items: center;
+}
+.user-info.email {
+    color: rgb(118, 95, 235) ;
+    font-weight: bold;
+}
+
+.email {
+    margin-right: 4%;
+}
+
+.flex-container{
+    position: relative;
+    top: 6rem;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card{
+    min-height: fit-content;
+    width: 100%;
+}
+
+.upcoming-travels img{
+    width: 70%;
+    float: right;
+}
+
+.card li{
+    list-style: none;
+}
+
+.card li>button{
+    padding: 2%;
+}
+
+.card h1{
+    margin-left: 2%;
+    font-size: 5em;
+    color:#4b68dbff;
+}
+
+
+.travel-container{
+    clear: left;
+    margin-top: 5%;
+    height: 50vh;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    gap: 10%;
+}
+
+.travel-card {
+    background-color: #a696f9ff;
+    width: 40%;
+    height: 400px;
+    min-width: 500px;
+    border: solid;
+    border-width: 0px;
+    border-radius: 15px;
+}
+
+
+.add-new-journey img{
+    width: 70%;
+    float: left;
+}
+
+.add-new-journey{
+    margin-top: 5%;
+}
+
+.add-new-journey a{
+    cursor: pointer;
+}
+
+button {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 2%;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.arrival-departure-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25%;
+    height: 60vh;
+}
+
+.arrival-departure{
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 42px;
+    width: 15rem;
+    height: 15rem;
+    box-shadow: 5px 5px 25px #a696f9ff;
+    border-radius: 25%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.image-container{
+    position: relative;
+    text-align: center;
+}
+
+.image-container>div {
+    width: 100%;
+    color:#4b68dbff;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.from-to-heading{
+    padding: 0;
+    margin: 0;
+}
+
+.card .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card label {
+    font-size: 1.2em;
+    color: #4b68dbff;
+}
+
+.card select,
+.card input {
+    padding: 10px;
+    font-size: 1em;
+}
+
+.card button {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #2980b9;
+}
+
+
+.base-container{
+    display: flex;
+    justify-content: center;
+}
+
+.base-container>footer{
+    position: relative;
+    top: 6rem;
+    background-color: #D0A2F7;
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* ticket.css */
+.receipt {
+    padding: 25px 30px;
+    text-align: left;
+    min-height: 200px;
+    width: 88%;
+    background-color: #fff;
+    border-radius: 10px 10px 20px 20px;
+    box-shadow: 1px 3px 8px 3px rgba(0, 0, 0, 0.2);
+
+    .airliner-logo {
+      max-width: 80px;
+    }
+
+    .route {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0;
+
+      .plane-icon {
+        width: 30px;
+        height: 30px;
+        transform: rotate(90deg);
+      }
+      h2 {
+        font-weight: 300;
+        font-size: 2.2em;
+        margin: 0;
+      }
+    }
+
+    .details {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        min-width: 70px;
+
+        span {
+          font-size: .8em;
+          color: rgba(28, 28, 28, .7);
+          font-weight: 500;
+        }
+        h3 {
+          margin-top: 10px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+}

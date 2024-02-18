@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+    <link rel="icon" href="./../static/icon.svg" type="image/x-icon" />
+    <script src="./../static/script.js" defer></script>
+    <title>BuddyRide</title>
+</head>
+
+<body>
+    <div class="head-container">
+        <header class="main-header">
+            <div class="logo unselectable"><img src="./../static/logo.png" alt="logo"></div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="nav-item"><a href="#upcomingTravels">Upcoming Travels</a></li>
+                    <li class="nav-item"><a href="#AddNewTravel">Add New</a></li>
+                </ul>
+            </nav>
+            <div class="user-info email">{{ user }}</div>
+        </header>
+    </div>
+
+    <div class="flex-container">
+        <div class="card upcoming-travels">
+            <img id="upcomingTravels" src="./../static/upcoming-travels.svg" alt="upcoming-travels">
+            <h1>Upcoming <br> Travels </h1>
+            <div class="travel-container">
+                {% for entry in entries %}
+                <!-- <div class="travel-card">{{ entry }}</div> -->
+                <!-- eg. entry = (1, 'test@test.com', '222222-02-22T22:22', 'Campus', 'Rajiv Gandhi International Airport')
+ -->
+ <div class="receipts-wrapper">
+    <div class="receipts">
+       <div class="receipt">
+          <img src="./../static/logo.png" alt="logo" style="width: 150px; height: 50px;">
+          <div class="route">
+             <h3 style="padding: 50px;"
+             >{{ entry[3] }}</h3>
+             
+             <div>to</div>
+             <h3 style="padding: 50px;">{{ entry[4] }}</h3>
+          </div>
+          <div class="details">
+             <div class="item">
+                <span>Passenger</span>
+                <h3>{{ entry[1] }}</h3>
+             </div>
+             <div class="item">
+                <span>Booking ID</span>
+                <h3>{{ entry[0] }}</h3>
+             </div>
+             <div class="item">
+                <span>Departure</span>
+                <!-- in a format like 22-02-2022 22:22 -->
+                <h3> {{ entry[2] }}</h3>
+             </div>
+          </div>
+       </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        <div class="card add-new-journey">
+            <img id="AddNewTravel" src="./../static/add-new-journey.svg" alt="add-new">
+            <a onclick="createNewBookingDiv()">
+                <h1>Add New <br> Journey</h1>
+            </a>
+        </div>
+    </div>
+
+    <div class="base-container">
+        <footer>
+            <span>&copy; copyright</span>
+        </footer>
+    </div>
+</body>
+
+</html>

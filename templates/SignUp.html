@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    <script src="/../static/script.js" defer></script>
+    <title>CabMiloge</title>
+</head>
+<style>
+body{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../static/login-background.svg"); 
+    background-size:cover;
+    color:#fff;
+}
+
+h1{
+    font-weight:900
+}
+.container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 16px;
+    flex-direction: column;
+}
+
+.message-box{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-box p{
+    font-size:15px;
+    color:red;
+}
+
+.box{
+    width:20%;
+    min-height: fit-content;
+    height:35rem;
+    min-width: 350px;
+    font-size:1rem;
+    padding:2rem;
+    background-color: rgba(0,0,0,0.6);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 30px;
+}
+
+.box h1{
+    text-align: center;
+}
+.user{
+    margin-top: 4rem;
+}
+
+.fas{
+    position: absolute;
+}
+
+input{
+    width:90%;
+    margin-bottom:25px;
+    padding:0 1rem 0.5px;
+    font-size:1rem;
+    border:none;
+    border-bottom: 1px solid rgba(255,255,255,0.55);
+    outline:none;
+    background-color: rgba(0,0,0,0);
+    color: #fff;
+}
+
+input:focus{
+    border-bottom: 1px solid #eeeeee;
+}
+
+.reset-password{
+    color:#ff7f50;
+    text-align:right;
+    margin-top:0px;
+    font-size:12px;
+}
+
+.login-btn{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.btn{
+    display:block;
+    width:80%;
+    padding:15px;
+    background-color: #eeeeee;
+    color:#2e1903;
+    border:none;
+    border-radius:20px;
+    font-size:20px;
+    font-weight:600;
+    opacity:0.8;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.btn:hover{
+    background-color: #d3cfeb;
+    /* opacity:1; */
+}
+
+.signup span{
+    color:#7fb8e6;
+}
+
+.signup span::hover{
+    color:#3793df
+}
+
+a{
+    text-decoration: none;
+}
+
+select {
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 0 30px 15px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.55);;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color:#bdbdbd;
+}
+
+select:focus {
+    border-bottom: 1px solid #eeeeee;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+}
+
+</style>
+<body>
+    <div class="head-container">
+        <header class="main-header">
+            <div class="logo unselectable"><img src="/../static/logo.png" alt="logo">
+            </div>
+            <div class="user-info">
+                <div class="profile-dropdown">
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <div class="box">
+        <h1>Sign Up</h1>
+        <div class="user">
+        <form action="/Get_userData" method="post">
+            <i class="fas fa-user"></i>
+            <input type="text" name="fname" id="fname" placeholder="First Name" required>
+            <i class="fas fa-envelope"></i>
+            <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+            <i class="fas fa-envelope"></i>
+            <input type="text" name="email" id="email" placeholder="Email Address" required>
+            <i class="fas fa-unlock-alt"></i>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <i class="fas fa-venus-mars"></i>
+            <select name="gender" id="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <!-- Batch Dropdown -->
+            <i class="fas fa-graduation-cap"></i>
+            <select name="batch" id="batch" required>
+                <option value="" disabled selected>Select Batch</option>
+                <option value="UG1">UG1</option>
+                <option value="UG2">UG2</option>
+                <option value="UG3">UG3</option>
+                <option value="UG4">UG4</option>
+                <option value="UG5">UG5</option>
+                <option value="PG1">PG1</option>
+                <option value="PG2">PG2</option>
+            </select>
+            <div class="message-box"> 
+                {% if message %}
+                <p>
+                  {{ message }}
+                </p>
+                {% else %}
+                <p style="display: none"></p>
+                {% endif %}
+            </div>
+            <div class="login-btn">
+              <button class="btn" value="Submit"> <a> Submit</a></button>
+            </div>
+        </form>
+            <!-- <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password"> -->
+          </div>
+        </div>
+    </div>
+
+    <div class="head-container">
+        <footer>
+            &copy; copyright
+        </footer>
+    </div>
+</body>
+</html>
